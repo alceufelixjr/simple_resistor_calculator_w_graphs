@@ -3,23 +3,19 @@
 
 #include "band.h"
 
-
+#define MAX_RESISTOR_BANDS 4
 
 typedef struct Resistor Resistor;
-
-struct Resistor
-{
-    Band** bands;
-    int rValue;
-    int nBands;
-    int nBandsAlloc;
-};
 
 Resistor* createResistor();
 
 void addBandToResistor(Resistor* r, Band* band);
 
+void calculateResistance(Resistor* r);
 
+void printResistor(Resistor* r);
+
+void deallocateResistor(Resistor* r);
 
 
 #endif
